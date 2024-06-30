@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import { LandingPage, Dashboard, SignInSignUp } from './containers';
+import { Nav, Card, Button, Footer } from './components';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to React</h1>
+      <LandingPage/>
     </div>
   );
 }
