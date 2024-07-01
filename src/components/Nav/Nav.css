@@ -1,0 +1,36 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.NavLogo{
+    align-self: flex-start;
+}
+.NavLogo img {
+    width: 50%;
+    align-self: center;
+}
+.NavItems{
+    display: flex;
+    align-items: end;  
+}
+.NavItems a{
+    color: var(--text-color);
+    padding: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.signinBtn{
+    align-self: center;
+    color: var(--text-color);
+    background-color: var(--primary-btn-color);
+    font-size: 20px;
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 35px;
+    box-shadow: none;
+
+}
+
