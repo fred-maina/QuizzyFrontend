@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Adjust padding as needed */
-      
+    padding: 10px 20px; 
 }
 
 .NavLogo {
@@ -11,7 +10,7 @@
 }
 
 .NavLogo img {
-    width: 50%; /* Adjust width as needed */
+    width: 50%; 
     align-self: center;
 }
 
