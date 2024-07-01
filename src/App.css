@@ -1,4 +1,4 @@
-/* Add component specific styles here */
-.App {
-  text-align: center;
+.{
+  background-color: var(--background-color);
+  font-family: 'Inter', sans-serif;
 }
