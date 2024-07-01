@@ -5,7 +5,4 @@
   --secondary-btn-color: #0C03A3;
   --accent-color: #631BFB;
 }
-*{
-  background-color: var(--background-color);
-  font-family: 'Inter', sans-serif;
-}
+

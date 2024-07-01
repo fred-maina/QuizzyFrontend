@@ -1,0 +1,90 @@
+.Maincontent {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 20px;
+    
+}
+
+.WelcomeMsg {
+    padding-bottom: 20px;
+}
+
+.WelcomeMsg h1 {
+    font-size: 66px;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+
+.WelcomeMsg p {
+    font-weight: 100;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.Cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Cta button {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: var(--text-color);
+}
+
+.start {
+    background-color: var(--secondary-btn-color);
+    box-shadow: 5px -5px 33px 3px #4A61DA;
+    border: none;
+}
+
+.learn {
+    background: linear-gradient(135deg, #631BFB, #4A61DA);
+    border: none;
+}
+
+.logo {
+    align-items: flex-end;
+}
+.logo img{
+    align-self: flex-end;
+}
+
+@media (max-width: 983px) {
+    .Maincontent {
+        padding-left: 5px;
+        padding-top: 10px;
+    }
+
+    .WelcomeMsg h1 {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .WelcomeMsg p {
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+
+    .Cta {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 20px;
+    }
+
+    .Cta button {
+        margin-bottom: 10px;
+        width: 180px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
