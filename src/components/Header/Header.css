@@ -136,10 +136,10 @@
     margin: 0;
   }
 
+
+
 @media (max-width: 983px) {
-    *{
-        max-width: 430px;
-    }
+   
     .Maincontent {
         max-width: 430px;
         padding-top: 10px;
@@ -181,6 +181,7 @@
         font-size: 20px;
     }
 .Create {
+    max-width: 430px;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
