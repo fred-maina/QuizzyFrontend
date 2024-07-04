@@ -137,6 +137,9 @@
   }
 
 @media (max-width: 983px) {
+    *{
+        max-width: 430px;
+    }
     .Maincontent {
         max-width: 430px;
         padding-top: 10px;
