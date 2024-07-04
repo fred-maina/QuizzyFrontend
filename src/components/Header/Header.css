@@ -1,9 +1,8 @@
 .Maincontent {
     color: var(--text-color);
     display: flex;
-    flex-direction: column;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 20px; 
     
 }
 
@@ -19,17 +18,18 @@
 
 .WelcomeMsg p {
     font-weight: 100;
-    font-size: 20px;
+    font-size: 27px;
     padding-bottom: 20px;
 }
 
 .Cta {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    padding-top: 35px;
 }
 
 .Cta button {
+    
     margin-bottom: 20px;
     width: 200px;
     height: 50px;
@@ -37,54 +37,172 @@
     cursor: pointer;
     border-radius: 20px;
     color: var(--text-color);
+    
 }
 
 .start {
     background-color: var(--secondary-btn-color);
     box-shadow: 5px -5px 33px 3px #4A61DA;
     border: none;
+    margin-left: 30px;
+    
+    
 }
 
 .learn {
+    margin-left: 30px;
     background: linear-gradient(135deg, #631BFB, #4A61DA);
     border: none;
 }
 
-.logo {
+.Logo {
+    position: relative;
     align-items: flex-end;
+    float: inline-end;
+    margin-top: -320px;
 }
-.logo img{
-    align-self: flex-end;
+.Logo img{
+    height: 400px;
+    width: 400px;
 }
+.Create {
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 20px;
+    
+    color: var(--text-color);
+    
+  }
+  
+  .Create h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 37px;
+    margin-bottom: 20px;
+  }
+  
+  .Create img {
+    grid-column: 1 / 2;
+    width: 100%;
+    max-width: 703px;
+    height: auto;
+    border-radius: 30px;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .Steps {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+  }
+  
+  
+  .Steps {
+    
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .Step button {
+    font-size: 1.5rem;
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .Step h2 {
+    font-size: 27px;
+    margin: 0 0 10px;
+  }
+  
+  .Step p {
+    margin: 0;
+  }
 
 @media (max-width: 983px) {
     .Maincontent {
-        padding-left: 5px;
+        max-width: 430px;
         padding-top: 10px;
     }
-
+    
     .WelcomeMsg h1 {
         font-size: 30px;
         font-weight: 900;
     }
 
     .WelcomeMsg p {
-        font-size: 18px;
+        font-size: 25px;
         padding-bottom: 10px;
     }
 
     .Cta {
         flex-direction: column;
+        align-self: center;
+        padding: 35px;
     }
+    
+    .Logo {
+        position: relative;
+        align-items: center;
+        float: none;
+        margin-top: 0;
 
-    .logo {
-        width: 20px;
+
+    }
+    .Logo img{
+        height: 345px;
+        width: 345px;
     }
 
     .Cta button {
-        margin-bottom: 10px;
-        width: 180px;
-        height: 45px;
-        font-size: 16px;
+        margin-bottom: 50px;
+        width: 259px;
+        height: 60px;
+        font-size: 20px;
     }
+.Create {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .Create img {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 10px; /* Add spacing below the image */
+  }
+
+  .Steps {
+    grid-column: 1 / -1;
+  }
+
+  .Step {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .Step button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
+
+  

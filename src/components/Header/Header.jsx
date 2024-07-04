@@ -1,9 +1,9 @@
 import React from 'react';
 import './Header.css';
+import Keyboard from '../../assets/Keyboard.jpeg'
 import logo from '../../assets/SecondaryLogo.png'
-function Header() {
-  return (
-    <div>
+const Hero = () =>{
+  return (<div>
      <div id="Home" className='Maincontent'>
         <div className='WelcomeMsg'>
         <h1>
@@ -26,8 +26,58 @@ function Header() {
             Learn More
         </button>
     </div>
+    </div>);
+};
+
+const Steps =()=>{
+  return(
+    <div className="Create">
+      <h1>Create Quizzes In 3 simple Steps.</h1>
+      <img src={Keyboard } alt="Keyboard" />
+      <main className='Steps'>
+        <div className=' Step StepOne'>
+          <button>1</button>
+          <p>
+            <h2>Enter Quiz Title and Description</h2>
+            Choose an engaging title that captures the essence of your 
+            quiz and Provide a brief overview to give context and set 
+            expectations.
+          </p>
+        </div>
+        <div className=' Step StepTwo'>
+          <button>2</button>
+          <p>
+            <h2>Build The Quiz</h2>
+           Add Questions together with choices also select
+           the correct choice.
+          </p>
+        </div>
+        <div className=' Step StepThree'>
+          <button>3</button>
+          <p>
+            <h2>Share The Quiz Link</h2>
+            Share the Unique quiz link with your audience
+            for them to access the newly created Quiz.
+          </p>
+        </div>
+
+      </main>
+
+
+
     </div>
+
   );
+}
+
+
+function Header() {
+  return (<>
+    <Hero />
+    <Steps />
+    </>
+    )
+  ;
 }
 
 export default Header;
