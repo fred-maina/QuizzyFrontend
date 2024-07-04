@@ -16,7 +16,7 @@ const Hero = () =>{
       
       </div>
       <div className='Logo'>
-        <img src={logo} alt="Logo" />
+        <img src={logo} loading='lazy' alt="Logo" />
       </div>
       <div className='Cta'>
         <button className='start'>
@@ -33,7 +33,7 @@ const Steps =()=>{
   return(
     <div className="Create">
       <h1>Create Quizzes In 3 simple Steps.</h1>
-      <img src={Keyboard } alt="Keyboard" />
+      <img src={Keyboard } loading='lazy' alt="Keyboard" />
       <main className='Steps'>
         <div className=' Step StepOne'>
           <button>1</button>
