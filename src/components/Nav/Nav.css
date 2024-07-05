@@ -58,9 +58,11 @@
 @media (max-width: 983px) {
   .Nav{
     max-width: 430px;
+    
   }
   .NavLogo img {
     width: 90px;
+    
   }
   .NavToggler {
     display: block;

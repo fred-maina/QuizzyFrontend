@@ -165,11 +165,12 @@
     }
     
     .Logo {
+        display: none;
         max-width: 430px;
         position: relative;
         align-items: center;
-        
         margin-top: 0;
+
 
 
     }
