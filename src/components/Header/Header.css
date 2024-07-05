@@ -182,9 +182,9 @@
 
     .Cta button {
         max-width: 430px;
-        margin-bottom: 50px;
-        width: 259px;
-        height: 60px;
+        margin-bottom: 30px;
+        width: 240px;
+        height: 65px;
         font-size: 20px;
     }
 .Create {
@@ -192,7 +192,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
-
+  .Create{
+    margin-top: -19px;
+  }
   .Create img {
     grid-column: 1 / -1;
     max-width: 420px;
