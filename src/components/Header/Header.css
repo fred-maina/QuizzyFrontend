@@ -146,48 +146,55 @@
     }
     
     .WelcomeMsg h1 {
+        max-width: 430px;
         font-size: 30px;
         font-weight: 900;
     }
 
     .WelcomeMsg p {
+        max-width: 430px;
         font-size: 25px;
         padding-bottom: 10px;
     }
 
     .Cta {
+        max-width: 430px;
         flex-direction: column;
         align-self: center;
         padding: 35px;
     }
     
     .Logo {
+        max-width: 430px;
         position: relative;
         align-items: center;
-        float: none;
+        
         margin-top: 0;
 
 
     }
     .Logo img{
+
         height: 345px;
         width: 345px;
     }
 
     .Cta button {
+        max-width: 430px;
         margin-bottom: 50px;
         width: 259px;
         height: 60px;
         font-size: 20px;
     }
 .Create {
-    max-width: 430px;
+    max-width: 400px;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
 
   .Create img {
     grid-column: 1 / -1;
+    max-width: 420px;
     justify-self: center;
     align-self: center;
     margin-bottom: 10px; /* Add spacing below the image */
@@ -195,15 +202,18 @@
 
   .Steps {
     grid-column: 1 / -1;
+    max-width: 420px;
   }
 
   .Step {
+    max-width: 430px;
     flex-direction: column;
     align-items: center;
     padding: 20px;
   }
 
   .Step button {
+    max-width: 430px;
     margin-right: 0;
     margin-bottom: 10px;
   }
