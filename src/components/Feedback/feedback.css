@@ -1,0 +1,100 @@
+/* feedback.css */
+.feedback {
+    background-color: var(--background-color);
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  .feedback h2 {
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .feedback div {
+    color: var(--text-color);
+    display: inline-block;
+    width: 300px;
+    margin: 0 1.5%;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    vertical-align: top;
+  }
+  
+  .feedback p {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .feedback img.stars {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    position: center;
+    
+  }
+  
+  .feedback img.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 100px;
+  }
+  
+  .feedback label {
+    font-size: 1.1em;
+    font-weight: bold;
+   
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .feedback div {
+      width: 45%;
+      margin: 10px 2.5%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .feedback div {
+      width: 90%;
+      margin: 10px 5%;
+    }
+  
+    .feedback h2 {
+      font-size: 2em;
+    }
+  
+    .feedback p {
+      font-size: 0.9em;
+    }
+  
+    .feedback img.stars {
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .feedback h2 {
+      font-size: 1.8em;
+    }
+  
+    .feedback div {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    .feedback p {
+      font-size: 0.85em;
+    }
+  
+    .feedback img.stars {
+      width: 90px;
+    }
+  }
+  
