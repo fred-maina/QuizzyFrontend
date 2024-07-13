@@ -1,0 +1,23 @@
+.footer {
+    width: 100%;
+    background-color: var(--accent-color);     padding: 20px; /* Padding for spacing */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space above the footer */
+}
+.body{
+    background-color: var(--accent-color); /* Light gray background */
+
+}
+.footer p{
+    background-color: var(--accent-color); 
+}
+.footer a {
+    background-color: var(--accent-color); 
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+    background-color: var(--accent-color); 
+    text-decoration: underline; /* Underline on hover */
+}
