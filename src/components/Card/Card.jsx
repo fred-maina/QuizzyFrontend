@@ -8,7 +8,7 @@ import time from '../../assets/time-forward.png'
 function Card() {
   return (
     <div className="Card">
-      <h1> Why Quizzy </h1>
+      <h1> Why Quizzy? </h1>
       <div className='whyQuizzy'>
         <div className='Pencil'>
           <img src= {pencil} alt="" />
