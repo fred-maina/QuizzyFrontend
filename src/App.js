@@ -7,10 +7,7 @@ import { Nav, Header,Card, Button,Feedback, Footer } from './components';
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Header />
-      <Card />
-      <Feedback />
+       <LandingPage />
     </div>
   );
 }
