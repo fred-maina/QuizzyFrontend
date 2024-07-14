@@ -3,11 +3,14 @@
     display: flex;
     padding-top: 20px;
     padding-left: 20px; 
+    background-color: var(--background-color);
     
 }
 
 .WelcomeMsg {
     padding-bottom: 20px;
+    
+    
 }
 
 .WelcomeMsg h1 {
@@ -23,6 +26,8 @@
 }
 
 .Cta {
+  background-color: var(--background-color);
+    
     display: flex;
     align-items: center;
     padding-top: 35px;
@@ -79,6 +84,8 @@
     grid-template-rows: auto 1fr;
     gap: 20px;
     padding: 20px;
+    background-color: var(--background-color);
+    
     
     color: var(--text-color);
     
