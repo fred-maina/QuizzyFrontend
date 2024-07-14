@@ -17,8 +17,8 @@ function Feedback() {
           pretium vel ante. Praesent ut ante neque. Nullam 
           tempor.”
         </p>
-        <img src={star} alt="Star Rating" className="stars" />
-        <img src={Linda} alt="Linda Brown" className="avatar" />
+        <img src={star} alt="Star Rating" className="stars" /><br />
+        <img src={Linda} alt="Linda Brown" className="avatar" /> <br/>
         <label htmlFor="">Linda Brown</label>
       </div>
       <div>
@@ -29,8 +29,8 @@ function Feedback() {
           pretium vel ante. Praesent ut ante neque. Nullam 
           tempor.”
         </p>
-        <img src={star} alt="Star Rating" className="stars" />
-        <img src={John} alt="John Doe" className="avatar" />
+        <img src={star} alt="Star Rating" className="stars" /><br/>
+        <img src={John} alt="John Doe" className="avatar" /><br/>
         <label htmlFor="">John Doe</label>
       </div>
       <div>
@@ -41,8 +41,8 @@ function Feedback() {
           pretium vel ante. Praesent ut ante neque. Nullam 
           tempor.”
         </p>
-        <img src={star} alt="Star Rating" className="stars" />
-        <img src={James} alt="James Smith" className="avatar" />
+        <img src={star} alt="Star Rating" className="stars" /><br/>
+        <img src={James} alt="James Smith" className="avatar" /><br/>
         <label htmlFor="">James Smith</label>
       </div>
     </div>
