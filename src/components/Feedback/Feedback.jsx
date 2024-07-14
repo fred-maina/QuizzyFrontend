@@ -1,9 +1,9 @@
 import React from 'react';
 import './feedback.css';
 import star from '../../assets/stars-removebg-preview.png';
-import John from '../../assets/avatar.jpg';
-import Linda from '../../assets/Avatar2.jpg';
-import James from '../../assets/3d-illustration-teenager-with-funny-face-glasses.jpg';
+import John from '../../assets/John Doe.jpg';
+import Linda from '../../assets/Linda.jpg'
+import James from '../../assets/James smith.jpg';
 
 function Feedback() {
   return (
