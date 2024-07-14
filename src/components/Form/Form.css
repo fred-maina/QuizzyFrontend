@@ -1,0 +1,132 @@
+body{
+    background-color: var(--accent-color);
+}
+.rogo {
+    background-color: var(--accent-color);
+}
+img{
+    background-color: var(--accent-color);
+    height : 70px;
+    width: 100px;
+}
+.login-container {
+    
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background-color: var(--accent-color);
+}
+
+.login-box {
+  
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+}
+
+.login-box h1 {
+    margin-bottom: 20px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    align-self: flex-start;
+    
+}
+
+.login-box input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.login-box button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-box .extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.auth-options a {
+    margin: 0 10px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+} 
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .auth-options a {
+        margin: 0 5px;
+    }
+
+    .login-box h1 {
+        font-size: 24px;
+    }
+
+    .login-box button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        margin-top: -150px;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .login-box h1 {
+        font-size: 20px;
+    }
+
+    .login-box input, .login-box button {
+        font-size: 14px;
+    }
+
+    .auth-options a {
+        margin: 0 2px;
+    }
+}
