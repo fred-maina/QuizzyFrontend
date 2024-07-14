@@ -10,6 +10,7 @@ img{
     width: 100px;
 }
 .login-container {
+
     
     margin-top: -20px;
     display: flex;
@@ -17,11 +18,11 @@ img{
     align-items: center;
     justify-content: center;
     height: 100dvh;
-    background-color: var(--accent-color);
+    
 }
 
 .login-box {
-  
+    background-color: var(--background-color);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
