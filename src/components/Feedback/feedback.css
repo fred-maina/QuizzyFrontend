@@ -32,9 +32,9 @@
   }
   
   .feedback img.stars {
+    background-color: var(--background-color);
     width: 120px;
     height: auto;
-    margin-bottom: 20px;
     position: center;
     
   }
@@ -42,8 +42,9 @@
   .feedback img.avatar {
     width: 80px;
     height: 80px;
+    margin-top: -20px;
     border-radius: 50%;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
   }
   
   .feedback label {
