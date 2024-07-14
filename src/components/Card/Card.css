@@ -1,14 +1,10 @@
-body {
-    background-color: var(--background-color); /* Use the background color variable */
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .Card {
+.Card {
     text-align: center;
     color: var(--text-color); /* Use the text color variable */
     padding: 20px;
     border-radius: 10px;
+    width: 100%;
+    background-color: var(--background-color);
     
   }
   
@@ -54,7 +50,7 @@ body {
     font-size: 1.1em;
     margin: 0;
     margin-top: 50px;
-    color: var(--text-color);
+    color: white;
   }
   
   /* Responsive styles */
