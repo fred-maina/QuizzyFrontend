@@ -20,7 +20,7 @@ const Hero = () =>{
       </div>
       <div className='Cta'>
         <button className='start'>
-            Get Started
+            <a href="/login">Get Started</a>
         </button>
         <button className='learn'>
             Learn More
