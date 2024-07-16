@@ -1,12 +1,38 @@
 import React, { useState } from 'react';
 import './Form.css'; // Import your CSS file
 import rogo from '../../assets/MainLogo.png';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
-    const [passwordType, setPasswordType] = useState("password");
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordType, setPasswordType] = useState('password');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
-        setPasswordType(passwordType === "password" ? "text" : "password");
+        setPasswordType(passwordType === 'password' ? 'text' : 'password');
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(`http://127.0.0.1:8000/authenticate/auth/token/`, {
+                username,
+                password,
+            });
+            localStorage.setItem('access_token', response.data.access);
+        
+            localStorage.setItem('refresh_token', response.data.refresh);
+            setError('');
+            navigate('/dashboard');
+        } catch (error) {
+            console.error('Login failed', error);
+            setError('Invalid username or password. Please try again.');
+            setUsername('');
+            setPassword('');
+        }
     };
 
     return (
@@ -16,15 +42,32 @@ const Form = () => {
                 <div className="login-box">
                     <h1>Welcome Back</h1>
                     <p>Please enter your account details</p>
-                    <form>
+                    
+                    <form onSubmit={handleLogin}>
                         <label>Username</label>
-                        <input type="text" placeholder="Enter Username" />
+                        <input
+                            type="text"
+                            placeholder="Enter Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
                         <label>Password</label>
                         <div className="password-container">
-                            <input type={passwordType} placeholder="Enter Password" />
-                            <i className={`fa ${passwordType === "password" ? "fa-eye" : "fa-eye-slash"}`} onClick={togglePasswordVisibility}></i>
+                            <input
+                                type={passwordType}
+                                placeholder="Enter Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            <i
+                                className={`fa ${passwordType === 'password' ? 'fa-eye' : 'fa-eye-slash'}`}
+                                onClick={togglePasswordVisibility}
+                            ></i>
                         </div>
                         <button type="submit">Login</button>
+                        {error && <div className="error-message">{error}</div>}
                     </form>
                     <div className="extra-options">
                         <a href="#">Forgot password?</a>
@@ -36,11 +79,8 @@ const Form = () => {
                     <p>No Account? <a href="#">Sign Up</a></p>
                 </div>
             </div>
-           
         </>
     );
 };
-
-
 
 export default Form;
