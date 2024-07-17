@@ -5,6 +5,8 @@
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
+ 
+  width: 100%;
 }
 
 .NavLogo {
@@ -12,9 +14,10 @@
 }
 
 .NavLogo img {
-  width: 80%;
+  width: 99%;
   height: 60px;
   align-self: center;
+  background-color: black;
 }
 
 .NavItems {
@@ -41,6 +44,10 @@
   border-radius: 35px;
   box-shadow: none;
   border: none;
+  
+}
+.signinBtn:hover{
+  background-color: var(--accent-color);
 }
 .NavCloseBtn {
   display: none;
