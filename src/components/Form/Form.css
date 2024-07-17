@@ -1,17 +1,18 @@
 body{
-    background-color: var(--accent-color);
+    background-color: var(--background-color);
+
 }
 .rogo {
     background-color: var(--accent-color);
 }
 img{
     background-color: var(--accent-color);
+    
     height : 70px;
     width: 100px;
 }
 .login-container {
 
-    
     margin-top: -20px;
     display: flex;
     flex-direction: column;
@@ -22,15 +23,17 @@ img{
 }
 
 .login-box {
-    background-color: var(--background-color);
+    
+   
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 12px rgba(20, 10, 10, 100);
     text-align: center;
     width: 30%;
 }
 
 .login-box h1 {
+    
     margin-bottom: 20px;
 }
 
@@ -43,10 +46,12 @@ img{
     margin-top: 10px;
     margin-bottom: 5px;
     align-self: flex-start;
+   
     
 }
 
 .login-box input {
+    width: 70%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -93,6 +98,10 @@ img{
 .footer a:hover {
     text-decoration: underline;
 } 
+.error-message{
+    color: red;
+    font-size: 18px;
+}
 @media (max-width: 768px) {
     .login-box {
         width: 90%;
@@ -114,9 +123,10 @@ img{
 
 @media (max-width: 480px) {
     .login-box {
-        margin-top: -150px;
+        margin-top: -190px;
         width: 80%;
         padding: 10px;
+        margin-left: 30px;
     }
 
     .login-box h1 {
