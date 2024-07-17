@@ -37,8 +37,9 @@ const Steps =()=>{
       <main className='Steps'>
         <div className=' Step StepOne'>
           <button>1</button>
+          <h2>Enter Quiz Title and Description</h2>
           <p>
-            <h2>Enter Quiz Title and Description</h2>
+           
             Choose an engaging title that captures the essence of your 
             quiz and Provide a brief overview to give context and set 
             expectations.
@@ -46,16 +47,18 @@ const Steps =()=>{
         </div>
         <div className=' Step StepTwo'>
           <button>2</button>
+          <h2>Build The Quiz</h2>
           <p>
-            <h2>Build The Quiz</h2>
+            
            Add Questions together with choices also select
            the correct choice.
           </p>
         </div>
         <div className=' Step StepThree'>
           <button>3</button>
+          <h2>Share The Quiz Link</h2>
           <p>
-            <h2>Share The Quiz Link</h2>
+            
             Share the Unique quiz link with your audience
             for them to access the newly created Quiz.
           </p>
