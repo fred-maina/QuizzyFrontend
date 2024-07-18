@@ -1,3 +1,147 @@
-.Analytics {
-  /* Add your styles here */
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  
+  background-color: var(--background-color);
+}
+
+.Header h1 {
+  font-size: 30px;
+  margin: 0; /* Ensure there's no margin interfering with centering */
+}
+
+.profile {
+  position: absolute;
+  right: 10px; /* Adjust this value as needed for spacing from the right edge */
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.Header img {
+  width: 45px;
+  height: 45px;
+  background-color: var(--background-color);
+  margin-right: 10px; /* Adds some space between the image and button */
+}
+
+.Header button {
+  border: none;
+  height: 35px;
+  font-size: 17px;
+  width: 150px;
+  border-radius: 20px;
+  color: white;
+  background-color: var(--secondary-btn-color);
+}
+
+.Header button:hover {
+  background-color: var(--accent-color);
+}
+
+.AnalyticsCard {
+  background-color: var(--secondary-btn-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  border-radius: 35px;
+  width: 700px;
+  margin: 30px;
+
+}
+
+.AnalyticsItem, .AnalyticsItem h1, .AnalyticsItem p {
+  background-color: var(--secondary-btn-color);
+}
+
+.AnalyticsItem {
+  display: flex;
+  margin: 35px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center-align the text */
+}
+
+.AnalyticsItem h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.AnalyticsItem p {
+  margin: 10px 0 0 0; /* Ensure p is directly below h1 with a small margin */
+}
+
+@media (max-width: 768px) {
+  .Header {
+    padding: 5px;
+  }
+
+  .Header h1 {
+    font-size: 20px;
+  }
+
+  .Header img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .Header button {
+    height: 30px;
+    font-size: 15px;
+    width: 120px;
+  }
+
+  .AnalyticsCard {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .AnalyticsItem h1 {
+    font-size: 40px;
+  }
+
+  .AnalyticsItem p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Header {
+    padding: 5px;
+  }
+
+  .Header h1 {
+    font-size: 18px;
+  }
+
+  .Header img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .Header button {
+    height: 25px;
+    font-size: 12px;
+    width: 100px;
+  }
+
+  .AnalyticsCard {
+    padding: 10px;
+    margin: 5px;
+    left: 20px;
+    width: 340px;
+  }
+
+  .AnalyticsItem h1 {
+    font-size: 30px;
+  }
+
+  .AnalyticsItem p {
+    font-size: 12px;
+  }
 }
