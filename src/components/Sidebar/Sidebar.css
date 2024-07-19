@@ -66,7 +66,7 @@
 /* Media query to adjust layout for smaller screens */
 @media (max-width: 600px) {
   .Sidebar {
-    width: 100vw;
+    width: 99vw;
     height: auto;
     position: fixed;
     bottom: 0;
@@ -74,11 +74,13 @@
     margin-left: 10px;
     flex-direction: row;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 20px 0px 49px;
+    border-radius: 35px;
 
   }
 
   .Sidebar_item {
+    padding-bottom: 10px;
     width: auto;
     height: auto;
     margin: 0;
@@ -95,7 +97,7 @@
 
   .Sidebar_item label {
     display: block;
-    font-size: 13px; /* Smaller font size for labels */
+    font-size: 12px; /* Smaller font size for labels */
   /* Optional: change text color for better contrast */
   }
 }
