@@ -15,7 +15,7 @@
 
 .profile {
   position: absolute;
-  right: 10px; /* Adjust this value as needed for spacing from the right edge */
+  right: -150px; /* Adjust this value as needed for spacing from the right edge */
   display: flex;
   align-items: center;
   background-color: var(--background-color);
@@ -50,6 +50,7 @@
   padding: 20px;
   color: white;
   border-radius: 35px;
+ 
   width: 800px; /* Adjusted for responsiveness */
    /* Center it and ensure it's within the viewport */
   box-sizing: border-box; /* Ensure padding is included in width */
@@ -121,6 +122,9 @@
     margin-left: -200px;
     margin-bottom: 40px;
    
+  }
+  .profile {
+    right: 00px;
   }
 
   .Header img {
