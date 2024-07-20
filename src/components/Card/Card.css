@@ -18,24 +18,66 @@
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  
-  .whyQuizzy div {
-    color: var(--background-color);
-    width: 200px;
-    height: 250px;
-    padding: 25px;
-    margin: 15px;
-    border-radius: 15px;
-    background-color: var(--accent-color); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+  /* Card.css */
+
+/* Animation Keyframes */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  
-  .whyQuizzy div:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
+}
+
+/* Initial State */
+.whyQuizzy div {
+  color: var(--background-color);
+  width: 200px;
+  height: 250px;
+  padding: 25px;
+  margin: 15px;
+  border-radius: 15px;
+  background-color: var(--accent-color); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: none;
+}
+
+/* Hover Effect */
+.whyQuizzy div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Class with Delay */
+.whyQuizzy div.animate {
+  animation: slideUp 0.5s forwards;
+}
+
+.whyQuizzy div.delay-0 {
+  animation-delay: 0s;
+}
+
+.whyQuizzy div.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.whyQuizzy div.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.whyQuizzy div.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Rest of your CSS */
+
+
   .whyQuizzy img {
     background-color: var(--accent-color); 
 
