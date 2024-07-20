@@ -1,10 +1,84 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TakeQuiz.css';
+import ProfilePic from '../../assets/Dashboard/account.png';
 
 const TakeQuiz = () => {
+  const [quizCode, setQuizCode] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const Header = () => {
+    return (
+      <div className="Analytics">
+        <div className='Header'>
+          <div className='profile'>
+            <button onClick={() => {
+              // Handle sign-out logic here
+              localStorage.removeItem('accessToken');
+              navigate('/login');
+            }}>
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const handleInputChange = (event) => {
+    setQuizCode(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError('');
+
+    const token = localStorage.getItem('access_token'); // Match the key used during login
+ // Retrieve the access token from localStorage
+
+    if (!token) {
+      // Redirect to login page if no token is found
+      navigate('/login');
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://quizzy-397771394376.herokuapp.com/api/quizzes/${quizCode}/questions/`, {
+        headers: {
+          'Authorization': `Bearer ${token}`, // Add the token to the headers
+        },
+      });
+     
+      if (!response.ok) {
+        throw new Error('Quiz Invalid');
+      }
+      const data = await response.json();
+      navigate(`/quiz/${quizCode}`);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <div className="TakeQuiz">
-      <h1>TakeQuiz Component</h1>
+      <Header />
+      <div className="outer-container">
+        <div className="container">
+          <h2>Enter Quiz Code To Proceed:</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="quiz-code-input"
+              value={quizCode}
+              onChange={handleInputChange}
+              placeholder="Enter Quiz Code"
+            />
+            <button type="submit" className="submit-button">Submit</button>
+          </form>
+          {error && <div className="error">{error}</div>}
+        </div>
+      </div>
     </div>
   );
 };
