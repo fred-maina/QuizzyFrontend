@@ -20,7 +20,7 @@ const Analytics = () => {
       <div className='IndividualResults'>
         <h1> View Results For Each Quiz</h1>
         <div className='QuizCard'>
-          <div QuizCardItem>
+          <div className="QuizCardItem">
           <h1>CED45F- Kenyan Quiz</h1>
           </div>
         </div>
