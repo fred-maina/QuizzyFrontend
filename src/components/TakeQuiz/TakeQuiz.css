@@ -1,3 +1,87 @@
-.TakeQuiz {
-  /* Add your styles here */
+
+.Header button {
+  border: none;
+  height: 35px;
+  font-size: 17px;
+  width: 150px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--secondary-btn-color);
+}
+
+.Header button:hover {
+  background-color: var(--accent-color);
+}
+.TakeQuiz{
+  background-color: var(--background-color);
+
+}
+/* Main container styling */
+.container {
+  display: flex;
+  
+  margin-left: 200px;
+  border-radius: 60px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background: linear-gradient(to top, var(--background-color), var(--accent-color));
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.container h2 {
+  margin: 10px;
+  background: linear-gradient(to top, var(--background-color), var(--accent-color));
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Input field styling */
+.quiz-code-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Submit button styling */
+.submit-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--secondary-btn-color);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .quiz-code-input {
+    width: 90%;
+  }
+
+  .submit-button {
+    width: 90%;
+    padding: 15px 0;
+  }
 }
