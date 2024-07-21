@@ -35,7 +35,6 @@ const TakeQuiz = () => {
     setError('');
 
     const token = localStorage.getItem('access_token'); // Match the key used during login
- // Retrieve the access token from localStorage
 
     if (!token) {
       // Redirect to login page if no token is found
@@ -44,16 +43,17 @@ const TakeQuiz = () => {
     }
 
     try {
-      const response = await fetch(`https://quizzy-397771394376.herokuapp.com/api/quizzes/${quizCode}/questions/`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/quizzes/${quizCode}/`, {
         headers: {
           'Authorization': `Bearer ${token}`, // Add the token to the headers
         },
       });
-     
+
       if (!response.ok) {
-        throw new Error('Quiz Invalid');
+        throw new Error('Quiz Not Found. Kindly enter a valid Quiz Code.');
       }
-      const data = await response.json();
+
+      // Navigate to the quiz page if the quiz exists
       navigate(`/quiz/${quizCode}`);
     } catch (err) {
       setError(err.message);
