@@ -1,3 +1,155 @@
 .CreateQuiz {
-  /* Add your styles here */
+  background-color: var(--background-color);
+  color: black;
+  padding: 20px;
+  width: 90vw; /* Use a percentage to ensure it adapts to screen width */
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CreateQuiz h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+} 
+
+.form-control {
+  width: 100%; /* Full width within its container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.valid-feedback,
+.invalid-feedback {
+  display: none;
+}
+
+.form-control.is-valid {
+  border-color: var(--success-color);
+}
+
+.form-control.is-valid + .valid-feedback {
+  display: block;
+}
+
+.form-control.is-invalid {
+  border-color: var(--danger-color);
+}
+
+.form-control.is-invalid + .invalid-feedback {
+  display: block;
+}
+
+.question-block {
+  margin-bottom: 20px;
+}
+
+.choice-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.choice-group input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.choice-group .form-check-input {
+  margin-right: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: var(--accent-color);
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.success-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  background-color: var(--danger-color);
+  color: var(--accent-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.progress {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .CreateQuiz {
+    padding: 10px;
+    width: 100vw; /* Full width for small screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .choice-group input[type="text"] {
+    margin-right: 5px;
+  }
+
+  .question-block {
+    margin-bottom: 15px;
+  }
 }
