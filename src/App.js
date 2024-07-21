@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { LandingPage, Dashboard, SignInSignUp } from './containers';
-
+import Quiz from './components/TakeQuiz/Quiz';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<SignInSignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* Add more routes as needed */}
+          <Route path="/quiz/:quizCode" element={<Quiz />} />
         </Routes>
       </div>
     </Router>
