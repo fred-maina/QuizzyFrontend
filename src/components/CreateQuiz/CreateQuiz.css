@@ -1,3 +1,4 @@
+
 .CreateQuiz {
   background-color: var(--background-color);
   color: black;
@@ -21,7 +22,7 @@
 .form-group label {
   display: block;
   margin-bottom: 5px;
-} 
+}
 
 .form-control {
   width: 100%; /* Full width within its container */
@@ -93,7 +94,13 @@
 
 .btn-danger {
   background-color: var(--danger-color);
-  color: var(--accent-color);
+  border: none;
+}
+
+.remove {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .loading {
@@ -144,7 +151,7 @@
     font-size: 14px;
     padding: 8px;
   }
-  
+
   .choice-group input[type="text"] {
     margin-right: 5px;
   }
