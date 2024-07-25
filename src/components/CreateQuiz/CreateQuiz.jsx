@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CreateQuiz.css';
+import { FaTrash as trashIcon}   from 'react-icons/fa';
+ // Import trash icon
 
 const CreateQuiz = () => {
   const [step, setStep] = useState(1);
@@ -253,7 +255,9 @@ const QuestionBlock = ({ question, questionIndex, handleQuestionChange, handleCh
         onChange={(e) => handleQuestionChange(questionIndex, e.target.value)}
         className="form-control"
       />
-      <button type="button" onClick={() => removeQuestion(questionIndex)} className="btn btn-danger">Remove Question</button>
+      <button type="button" onClick={() => removeQuestion(questionIndex)} className="btn btn-danger remove">
+        <img src={trashIcon} alt="Remove Question" />
+      </button>
     </div>
     {question.choices.map((choice, cIndex) => (
       <div key={cIndex} className="form-group choice-group">
@@ -271,7 +275,9 @@ const QuestionBlock = ({ question, questionIndex, handleQuestionChange, handleCh
           className="form-check-input"
         />
         <label className="form-check-label">Correct</label>
-        <button type="button" onClick={() => removeChoice(questionIndex, cIndex)} className="btn btn-danger">Remove Choice</button>
+        <button type="button" onClick={() => removeChoice(questionIndex, cIndex)} className="btn btn-danger remove">
+          <img src={trashIcon} alt="Remove Choice" />
+        </button>
       </div>
     ))}
     <button type="button" onClick={() => addChoice(questionIndex)} className="btn btn-secondary">Add Choice</button>
