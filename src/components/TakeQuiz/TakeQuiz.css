@@ -74,6 +74,86 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+.quiz-card, .intro-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px; /* Increased size */
+  text-align: center;
+}
+
+.quiz-card h1, .intro-card h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.quiz-card p, .intro-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.question-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.question-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.choice-item {
+  margin: 10px 0;
+}
+
+.choice-label {
+  margin-left: 10px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+.tick-mark {
+  color: green;
+  margin-left: 10px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation-buttons button, .start-button, .cancel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--secondary-btn-color);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation-buttons button:hover, .start-button:hover, .cancel-button:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-button {
+  background-color: red;
+}
+
+.cancel-button:hover {
+  background-color: darkred;
+}
+
+
 /* Responsive styling */
 @media (max-width: 600px) {
   .quiz-code-input {
