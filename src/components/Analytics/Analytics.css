@@ -1,40 +1,39 @@
+/* Analytics.css */
+
 .Header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  padding: 10px;
+  padding: 20px;
   background-color: var(--background-color);
 }
 
 .Header h1 {
-  font-size: 30px;
-  margin-left: -450px;
+
+  font-size: 2rem;
+  margin: 0;
 }
 
 .profile {
-  position: absolute;
-  right: -150px; /* Adjust this value as needed for spacing from the right edge */
   display: flex;
   align-items: center;
-  background-color: var(--background-color);
 }
 
 .Header img {
   width: 45px;
   height: 45px;
-  background-color: var(--background-color);
-  margin-right: 10px; /* Adds some space between the image and button */
+  margin-right: 10px;
 }
 
 .Header button {
   border: none;
-  height: 35px;
-  font-size: 17px;
-  width: 150px;
+  height: 40px;
+  font-size: 1rem;
+  width: 120px;
   border-radius: 20px;
   color: white;
   background-color: var(--secondary-btn-color);
+  cursor: pointer;
 }
 
 .Header button:hover {
@@ -42,127 +41,167 @@
 }
 
 .AnalyticsCard {
-  background-color: var(--secondary-btn-color);
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
   color: white;
-  border-radius: 35px;
-  left: 100px;
-  width: 800px; /* Adjusted for responsiveness */
-   /* Center it and ensure it's within the viewport */
-  box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-.AnalyticsItem, .AnalyticsItem h1, .AnalyticsItem p {
+  border-radius: 20px;
   background-color: var(--secondary-btn-color);
+  margin: 20px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.AnalyticsCard h1,.AnalyticsCard p{
+  background-color: var(--secondary-btn-color);
+
 }
 
 .AnalyticsItem {
-  display: flex;
-  margin: 35px 0; /* Margin adjusted for vertical alignment */
-  flex-direction: column;
-  align-items: center;
-  text-align: center; /* Center-align the text */
+  background-color: var(--secondary-btn-color);
+  text-align: center;
 }
 
 .AnalyticsItem h1 {
-  font-size: 50px;
-  
+  font-size: 3rem;
   margin: 0;
 }
 
 .AnalyticsItem p {
-  margin: 10px 0 0 0; /* Ensure p is directly below h1 with a small margin */
+  margin: 10px 0 0;
 }
 
-.QuizCardItem h1{
-  align-self: center;
-  font-size: 390px;
-  display : none;
+.IndividualResults {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  width: 100%;
+
+  max-height: 40%;
+  overflow-y: scroll;
+  
+  box-sizing: border-box;
 }
 
+.IndividualResults h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: var(--accent-color);
+ 
+}
+
+.QuizCardItem {
+
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.QuizCardItem h1 {
+  
+  font-size: 1.4em;
+  background-color: var(--background-color);
+  margin: 0;
+}
+
+.delete-button {
+  background-color: var(--secondary-btn-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: var(--danger-color);
+}
+
+/* Pagination styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-item {
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid var(--secondary-btn-color);
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--secondary-btn-color);
+}
+
+.pagination-item.active {
+  font-weight: bold;
+  background-color: var(--secondary-btn-color);
+  color: white;
+}
 
 @media (max-width: 768px) {
-  .Header {
-    padding: 5px;
-  }
-
   .Header h1 {
-    font-size: 20px;
-  }
-
-  .Header img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .Header button {
-    height: 30px;
-    font-size: 15px;
-    width: 120px;
+    font-size: 1.5rem;
   }
 
   .AnalyticsCard {
-    padding: 15px;
-    margin: 20px auto; /* Centered */
+    flex-direction: column;
+    padding: 10px;
   }
 
   .AnalyticsItem h1 {
-    font-size: 40px;
+    font-size: 2rem;
   }
 
   .AnalyticsItem p {
-    font-size: 14px;
+    font-size: 1rem;
+  }
+
+  .IndividualResults {
+    padding: 10px;
+  }
+
+  .IndividualResults h1 {
+    font-size: 1.25rem;
+  }
+
+  .QuizCardItem h1 {
+    font-size: 0.875rem;
+  }
+
+  .delete-button {
+    padding: 5px;
   }
 }
 
 @media (max-width: 480px) {
-  .Header {
-    padding: 5px;
-  }
-
   .Header h1 {
-    font-size: 18px;
-    margin-left: -200px;
-    margin-bottom: 40px;
-   
-  }
-  .profile {
-    right: 00px;
+    font-size: 1.25rem;
   }
 
-  .Header img {
-    width: 30px;
-    height: 30px;
-    display: none;
-  }
-
-  .Header button {
-    
-    height: 25px;
-    font-size: 12px;
-    width: 100px;
-  }
-
-  .AnalyticsCard {
-    margin: 10px auto; /* Centered and within viewport */
-    margin-left: -40px;
-    padding: 10px;
-    height: auto; /* Removed fixed height */
-    width: 90vw; /* Use a percentage to ensure it fits within viewport */
-    color: white;
-    border-radius: 35px;
-    justify-content: space-around;
-    box-sizing: border-box; /* Ensure padding is included in width */
-  }
- 
   .AnalyticsItem h1 {
-    font-size: 30px;
+    font-size: 1.5rem;
   }
 
   .AnalyticsItem p {
-    font-size: 12px;
+    font-size: 0.875rem;
+  }
+
+  .QuizCardItem h1 {
+    font-size: 0.75rem;
+  }
+
+  .delete-button {
+    padding: 5px;
   }
 }
