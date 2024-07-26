@@ -10,7 +10,11 @@ const Analytics = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [quizzesPerPage] = useState(5);
   const navigate = useNavigate();
-
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString(); // Format to MM/DD/YYYY, HH:MM AM/PM
+  };
+  
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('access_token');
@@ -102,7 +106,7 @@ const Analytics = () => {
             currentQuizzes.map((quiz, index) => (
               <div className="QuizCardItem" key={index}>
                 <h1>{quiz.quiz_code} - {quiz.quiz_title}</h1>
-                <p>Created on: {quiz.quiz_creation_date}</p>
+                <p>Created on: {formatDate(quiz.quiz_creation_date)}</p>
                 <button className="delete-button" onClick={() => handleDelete(quiz.quiz_code)}>Delete</button>
               </div>
             ))
