@@ -93,37 +93,40 @@ const Analytics = () => {
     </div>
   );
 
-  const IndividualResults = () => (<><h1 id='ViewH1'>View Results For Each Quiz</h1>
-    <div className='IndividualResults'>
-      
-      <div className='QuizCard'>
-        {currentQuizzes.length > 0 ? (
-          currentQuizzes.map((quiz, index) => (
-            <div className="QuizCardItem" key={index}>
-              <h1>{quiz.quiz_code} - {quiz.quiz_title}</h1>
-              <button className="delete-button" onClick={() => handleDelete(quiz.quiz_code)}>Delete</button>
-            </div>
-          ))
-        ) : (
-          <p>No quizzes found</p>
+  const IndividualResults = () => (
+    <>
+      <h1 id='ViewH1'>View Results For Each Quiz</h1>
+      <div className='IndividualResults'>
+        <div className='QuizCard'>
+          {currentQuizzes.length > 0 ? (
+            currentQuizzes.map((quiz, index) => (
+              <div className="QuizCardItem" key={index}>
+                <h1>{quiz.quiz_code} - {quiz.quiz_title}</h1>
+                <p>Created on: {quiz.quiz_creation_date}</p>
+                <button className="delete-button" onClick={() => handleDelete(quiz.quiz_code)}>Delete</button>
+              </div>
+            ))
+          ) : (
+            <p>No quizzes found</p>
+          )}
+        </div>
+        {totalPages > 1 && (
+          <div className="pagination-container">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <span
+                key={index}
+                className={`pagination-item ${currentPage === index + 1 ? 'active' : ''}`}
+                onClick={() => paginate(index + 1)}
+              >
+                {index + 1}
+              </span>
+            ))}
+          </div>
         )}
       </div>
-      {totalPages > 1 && (
-        <div className="pagination-container">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <span
-              key={index}
-              className={`pagination-item ${currentPage === index + 1 ? 'active' : ''}`}
-              onClick={() => paginate(index + 1)}
-            >
-              {index + 1}
-            </span>
-          ))}
-        </div>
-      )}
-    </div></>
+    </>
   );
-
+  
   const CardComponent = () => (
     <div className='AnalyticsCard'>
       <div className='Total AnalyticsItem'>
