@@ -3,9 +3,10 @@
   background-color: var(--background-color);
   color: black;
   padding: 20px;
-  width: 90vw; /* Use a percentage to ensure it adapts to screen width */
-  max-width: 600px;
+  width: 670px;
   margin: 0 auto;
+  max-height: 550px;
+  overflow-x: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -133,6 +134,25 @@
   width: 0%;
   transition: width 0.3s ease;
 }
+.remove{
+  border: none;
+  
+}.remove img{
+  border: none;
+  background-image: none;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+.QuestionInput{
+  display: flex;
+
+}
+
+  .questionInput{
+    margin-top: 11px;
+  height: 20px;
+  }
 
 /* Responsive styling */
 @media (max-width: 600px) {
