@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CreateQuiz.css';
-import { FaTrash as trashIcon}   from 'react-icons/fa';
+import trashIcon   from '../../assets/Dustbin.png';
  // Import trash icon
 
 const CreateQuiz = () => {
@@ -248,26 +248,31 @@ const QuestionBlock = ({ question, questionIndex, handleQuestionChange, handleCh
   <div className="question-block">
     <div className="form-group">
       <label htmlFor={`question-${questionIndex}`}>Question {questionIndex + 1}</label>
+      <div className='QuestionInput'>
       <input
+      placeholder='Enter Question'
         type="text"
         id={`question-${questionIndex}`}
         value={question.questionText}
         onChange={(e) => handleQuestionChange(questionIndex, e.target.value)}
-        className="form-control"
+        className="form-control questionInput"
       />
       <button type="button" onClick={() => removeQuestion(questionIndex)} className="btn btn-danger remove">
         <img src={trashIcon} alt="Remove Question" />
       </button>
+      </div>
     </div>
     {question.choices.map((choice, cIndex) => (
       <div key={cIndex} className="form-group choice-group">
         <input
+        placeholder='Enter a choice'
           type="text"
           value={choice.choiceText}
           onChange={(e) => handleChoiceChange(questionIndex, cIndex, e.target.value)}
           className="form-control"
         />
         <input
+          
           type="radio"
           name={`correct-${questionIndex}`}
           checked={choice.isCorrect}
