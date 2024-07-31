@@ -11,3 +11,4 @@ export { default as Profile } from './Profile/Profile';
 export { default as CreateQuiz } from './CreateQuiz/CreateQuiz';
 export { default as Notification } from './Notification/Notification';
 export {default as Quiz } from './TakeQuiz/Quiz'
+export {default as Results} from './TakeQuiz/Results'
