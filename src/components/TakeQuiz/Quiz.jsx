@@ -55,9 +55,52 @@ const Quiz = () => {
     setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
-  const handleSubmit = () => {
-    // Handle the submission of the quiz
-    alert('Quiz submitted!');
+  const calculateScore = () => {
+    let score = 0;
+    quizData.questions.forEach((question) => {
+      const correctChoice = question.choices.find((choice) => choice.is_correct);
+      if (correctChoice && selectedChoices[question.id] === correctChoice.id) {
+        score += 1;
+      }
+    });
+    return score;
+  };
+
+  const handleSubmit = async () => {
+    const score = calculateScore();
+    const totalQuestions = quizData.questions.length;
+    const token = localStorage.getItem('access_token');
+
+    if (!token) {
+      navigate('/login');
+      return;
+    }
+
+    const submissionData = {
+      quiz_code: quizData.quiz_code,
+      score: score,
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/results/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed.');
+      }
+
+      const result = await response.json();
+      alert(`Quiz submitted! Your score is: ${score}`);
+      navigate('/results', { state: { score, quizCode: quizData.quiz_code, totalQuestions } });
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   const handleCancel = () => {
@@ -80,7 +123,7 @@ const Quiz = () => {
         <div className="intro-card">
           <h1>{quizData.title}</h1>
           <p>{quizData.description}</p>
-          <p>Created by: {quizData.created_by}</p>
+          <p>Created by: {quizData.quiz_creator_name}</p>
           <p>Number of Questions: {quizData.questions.length}</p>
           <button className="start-button" onClick={() => setStarted(true)}>Start Quiz</button>
           <button className="cancel-button" onClick={handleCancel}>Cancel</button>
@@ -128,5 +171,3 @@ const Quiz = () => {
 };
 
 export default Quiz;
-
-
