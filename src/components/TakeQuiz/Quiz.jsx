@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import {BASE_URL} from '../../config/configure'
+
 
 const Quiz = () => {
   const { quizCode } = useParams();
@@ -20,7 +22,7 @@ const Quiz = () => {
       }
 
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/quizzes/${quizCode}/questions/`, {
+        const response = await fetch(`${BASE_URL}/${quizCode}/questions/`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -75,14 +77,14 @@ const Quiz = () => {
       navigate('/login');
       return;
     }
-
+     var percentage=Math.floor((score/totalQuestions)*100)
     const submissionData = {
       quiz_code: quizData.quiz_code,
-      score: score,
+      score: percentage,
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/results/', {
+      const response = await fetch(`${BASE_URL}/api/results/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +98,6 @@ const Quiz = () => {
       }
 
       const result = await response.json();
-      alert(`Quiz submitted! Your score is: ${score}`);
       navigate('/results', { state: { score, quizCode: quizData.quiz_code, totalQuestions } });
     } catch (err) {
       setError(err.message);
