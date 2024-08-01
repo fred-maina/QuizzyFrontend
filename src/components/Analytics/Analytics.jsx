@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Analytics.css';
 import ProfilePic from '../../assets/Dashboard/account.png';
 import { useNavigate } from 'react-router-dom';
+import {BASE_URL} from '../../config/configure'
 
 const Analytics = () => {
   const [userData, setUserData] = useState(null);
@@ -14,7 +15,7 @@ const Analytics = () => {
     const date = new Date(dateString);
     return date.toLocaleString(); // Format to MM/DD/YYYY, HH:MM AM/PM
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('access_token');
@@ -25,7 +26,7 @@ const Analytics = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/user', {
+        const response = await axios.get(`${BASE_URL}/api/user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,36 +45,34 @@ const Analytics = () => {
 
   const handleDelete = async (quizCode) => {
     const token = localStorage.getItem('access_token');
-  
+
     if (!token) {
       navigate('/login');
       return;
     }
-  
+
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/quizzes/${quizCode}/delete/`, {
+      const response = await fetch(`${BASE_URL}/api/quizzes/${quizCode}/delete/`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to delete quiz');
       }
-  
-      // Optionally, update the userData state to remove the deleted quiz
+
       setUserData((prevData) => ({
         ...prevData,
         quiz_details: prevData.quiz_details.filter((quiz) => quiz.quiz_code !== quizCode),
       }));
-  
+
       console.log(`Quiz with code ${quizCode} deleted successfully`);
     } catch (error) {
       console.error('Error deleting quiz:', error);
     }
   };
-  
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -130,7 +129,7 @@ const Analytics = () => {
       </div>
     </>
   );
-  
+
   const CardComponent = () => (
     <div className='AnalyticsCard'>
       <div className='Total AnalyticsItem'>
@@ -138,7 +137,7 @@ const Analytics = () => {
         <p>Total Quizzes <br /> Created</p>
       </div>
       <div className='People AnalyticsItem'>
-        <h1>20</h1>
+        <h1>{userData.number_of_people}</h1>
         <p>Total People <br /> reached</p>
       </div>
       <div className='Questions AnalyticsItem'>
