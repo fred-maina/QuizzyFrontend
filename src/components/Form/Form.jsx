@@ -3,6 +3,8 @@ import './Form.css'; // Import your CSS file
 import rogo from '../../assets/MainLogo.png';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import {BASE_URL} from '../../config/configure'
+
 
 const Form = () => {
     const [isLogin, setIsLogin] = useState(true); // Toggle between login and signup
@@ -20,9 +22,12 @@ const Form = () => {
     };
 
     const handleLogin = async (e) => {
+
         e.preventDefault();
+        const url = `${BASE_URL}/authenticate/auth/token/`;
+            console.log('Request URL:', url);
         try {
-            const response = await axios.post(`http://127.0.0.1:8000/authenticate/auth/token/`, {
+            const response = await axios.post(`${BASE_URL}/authenticate/auth/token/`, {
                 username,
                 password,
             });
@@ -41,8 +46,11 @@ const Form = () => {
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
+
+            const url = `${BASE_URL}/authenticate/auth/token/`;
+            console.log('Request URL:', url);
             // First, register the user
-            await axios.post(`http://127.0.0.1:8000/authenticate/register/`, {
+            await axios.post(`${BASE_URL}/authenticate/register/`, {
                 username,
                 password,
                 first_name: firstName,
@@ -50,7 +58,7 @@ const Form = () => {
             });
             
             // Then, log the user in automatically
-            const response = await axios.post(`http://127.0.0.1:8000/authenticate/auth/token/`, {
+            const response = await axios.post(`${BASE_URL}/authenticate/auth/token/`, {
                 username,
                 password,
             });
