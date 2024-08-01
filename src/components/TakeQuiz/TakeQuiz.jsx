@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TakeQuiz.css';
 import ProfilePic from '../../assets/Dashboard/account.png';
+import {BASE_URL} from '../../config/configure'
 
 const TakeQuiz = () => {
   const [quizCode, setQuizCode] = useState('');
@@ -43,7 +44,7 @@ const TakeQuiz = () => {
     }
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/quizzes/${quizCode}/`, {
+      const response = await fetch(`${BASE_URL}/${quizCode}/`, {
         headers: {
           'Authorization': `Bearer ${token}`, // Add the token to the headers
         },
