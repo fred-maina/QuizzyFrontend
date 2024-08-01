@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import {BASE_URL} from '../../config/configure'
 
 const Results = () => {
   const navigate = useNavigate();
@@ -26,7 +27,8 @@ const Results = () => {
       };
 
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/results/', {
+        const response = await fetch(`${BASE_URL}/api/results/`, {
+
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
