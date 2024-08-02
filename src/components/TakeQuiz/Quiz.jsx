@@ -20,9 +20,9 @@ const Quiz = () => {
         navigate('/login');
         return;
       }
-
+    
       try {
-        const response = await fetch(`${BASE_URL}/${quizCode}/questions/`, {
+        const response = await fetch(`${BASE_URL}/api/quizzes/${quizCode}/questions/`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
