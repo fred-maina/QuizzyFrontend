@@ -44,7 +44,7 @@ const TakeQuiz = () => {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}/${quizCode}/`, {
+      const response = await fetch(`${BASE_URL}/api/quizzes/${quizCode}/`, {
         headers: {
           'Authorization': `Bearer ${token}`, // Add the token to the headers
         },
