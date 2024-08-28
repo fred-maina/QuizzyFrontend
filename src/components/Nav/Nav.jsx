@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import './Nav.css';
 import logo from '../../assets/MainLogo.png';
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,7 +26,8 @@ function Nav() {
         <a href="#home" onClick={toggleMenu}>Home</a>
         <a href="#about" onClick={toggleMenu}>About</a>
         <a href="#contact" onClick={toggleMenu}>Contact us</a>
-        <button className="signinBtn" onClick={toggleMenu}>Sign In</button>
+        {/* Use navigate function for Sign In button */}
+        <button className="signinBtn" onClick={() => navigate('/login')}>Sign In</button>
       </div>
     </nav>
   );
