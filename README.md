@@ -3,6 +3,7 @@
 ## Overview
 
 The Quizzy frontend application is a React-based interface for users to interact with quizzes created and managed through the Quizzy backend. Users can take quizzes, view results, and manage their quiz activities seamlessly.
+You can preview the  Django backend <a href="https://www.github.com/fred-maina/Quizzy-Backend">here </a>
 
 ## Features
 
