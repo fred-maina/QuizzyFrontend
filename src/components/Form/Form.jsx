@@ -51,7 +51,7 @@ const Form = () => {
             console.log('Request URL:', url);
             // First, register the user
             await axios.post(`${BASE_URL}/authenticate/register/`, {
-                username,
+                email,
                 password,
                 first_name: firstName,
                 last_name: lastName,
@@ -126,14 +126,6 @@ const Form = () => {
                             <h1>Create an Account</h1>
                             <p>Please fill in the details to sign up</p>
                             <form onSubmit={handleSignUp}>
-                                <label>Username</label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter Username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
                                 <label>Email</label>
                                 <input
                                     type="email"
