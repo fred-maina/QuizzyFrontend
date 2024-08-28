@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {BASE_URL} from '../../config/configure'
-
+import { BASE_URL } from '../../config/configure';
 
 const Quiz = () => {
   const { quizCode } = useParams();
@@ -10,6 +9,7 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedChoices, setSelectedChoices] = useState({});
   const [started, setStarted] = useState(false);
+  const [submitted, setSubmitted] = useState(false); // Track submission status
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Quiz = () => {
         navigate('/login');
         return;
       }
-    
+
       try {
         const response = await fetch(`${BASE_URL}/api/quizzes/${quizCode}/questions/`, {
           headers: {
@@ -69,6 +69,14 @@ const Quiz = () => {
   };
 
   const handleSubmit = async () => {
+    if (submitted) {
+      console.log('Submit already processed');
+      return;
+    }
+
+    console.log('Submitting quiz');
+    setSubmitted(true);
+
     const score = calculateScore();
     const totalQuestions = quizData.questions.length;
     const token = localStorage.getItem('access_token');
@@ -77,7 +85,8 @@ const Quiz = () => {
       navigate('/login');
       return;
     }
-     var percentage=Math.floor((score/totalQuestions)*100)
+
+    const percentage = Math.floor((score / totalQuestions) * 100);
     const submissionData = {
       quiz_code: quizData.quiz_code,
       score: percentage,
@@ -105,7 +114,7 @@ const Quiz = () => {
   };
 
   const handleCancel = () => {
-    navigate('/');
+    navigate('/dashboard');
   };
 
   if (error) {
@@ -161,7 +170,7 @@ const Quiz = () => {
             {currentQuestionIndex < quizData.questions.length - 1 ? (
               <button onClick={handleNextQuestion}>Next</button>
             ) : (
-              <button onClick={handleSubmit}>Submit</button>
+              <button onClick={handleSubmit} disabled={submitted}>Submit</button>
             )}
             <button className="cancel-button" onClick={handleCancel}>Cancel</button>
           </div>

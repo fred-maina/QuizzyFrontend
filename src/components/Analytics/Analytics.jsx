@@ -100,7 +100,7 @@ const Analytics = () => {
     <>
       <h1 id='ViewH1'>View Results For Each Quiz</h1>
       <div className='IndividualResults'>
-        <div className='QuizCard'>
+        <div className='QuizCard' >
           {currentQuizzes.length > 0 ? (
             currentQuizzes.map((quiz, index) => (
               <div className="QuizCardItem" key={index}>

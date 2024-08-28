@@ -67,7 +67,7 @@ const TakeQuiz = () => {
       <div className="outer-container">
         <div className="container">
           <h2>Enter Quiz Code To Proceed:</h2>
-          <form onSubmit={handleSubmit}>
+          <form className='form' onSubmit={handleSubmit}>
             <input
               type="text"
               className="quiz-code-input"
@@ -77,7 +77,7 @@ const TakeQuiz = () => {
             />
             <button type="submit" className="submit-button">Submit</button>
           </form>
-          {error && <div className="error">{error}</div>}
+          {error && <div className="error">Error: {error}</div>}
         </div>
       </div>
     </div>

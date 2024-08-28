@@ -24,7 +24,7 @@ function Nav() {
         <a href="#home" onClick={toggleMenu}>Home</a>
         <a href="#about" onClick={toggleMenu}>About</a>
         <a href="#contact" onClick={toggleMenu}>Contact us</a>
-        <button className="signinBtn" onClick={toggleMenu}><a href="/login">Sign In</a></button>
+        <button className="signinBtn" onClick={toggleMenu}>Sign In</button>
       </div>
     </nav>
   );

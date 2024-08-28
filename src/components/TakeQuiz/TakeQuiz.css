@@ -20,13 +20,13 @@
 /* Main container styling */
 .container {
   display: flex;
-  
   margin-left: 200px;
   border-radius: 60px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;
+
   background: linear-gradient(to top, var(--background-color), var(--accent-color));
   text-align: center;
   font-family: Arial, sans-serif;
@@ -35,11 +35,20 @@
 /* Heading styling */
 .container h2 {
   margin: 10px;
-  background: linear-gradient(to top, var(--background-color), var(--accent-color));
+  background-color: inherit;
   margin-bottom: 20px;
   font-size: 2rem;
   font-weight: bold;
   color: #000;
+}
+.form{
+  background-color: inherit;
+}
+.error{
+  margin-top: 20px;
+  color: red;
+  background-color: inherit;
+  font-size: 17px;
 }
 
 /* Input field styling */
@@ -49,11 +58,17 @@
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 25px;
-  border: 1px solid #ccc;
+  border: none;
   outline: none;
   font-size: 1.2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.8);
+  background: transparent;
+ 
+  box-shadow: 6px 4px 8px rgba(11, 23, 90, 0.1);
+  /* background: rgba(255, 255, 255, 0.8); */
+}
+.quiz-code-input ::placeholder{
+  color: #000;
+  
 }
 
 /* Submit button styling */
