@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { LandingPage, Dashboard, SignInSignUp } from './containers';
+import { LandingPage, Dashboard, SignInSignUp, NotFound } from './containers';
 import { Results } from './components';
-import Quiz from './components/TakeQuiz/Quiz'
+import Quiz from './components/TakeQuiz/Quiz';
 function App() {
   return (
     <Router>
@@ -14,6 +14,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/quiz/:quizCode" element={<Quiz />} />
           <Route path="/results" element={<Results />} />
+          <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
         </Routes>
       </div>
     </Router>
