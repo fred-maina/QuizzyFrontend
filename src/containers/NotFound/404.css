@@ -1,0 +1,45 @@
+/* 404.css */
+
+
+.not-found-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.not-found-content {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.not-found-heading {
+    font-size: 8rem;
+    color: var(--accent-color); /* Use accent color */
+    margin: 0;
+}
+
+.not-found-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.not-found-link {
+    text-decoration: none;
+    color: var(--primary-btn-color); /* Use primary button color */
+    font-weight: bold;
+}
+
+.not-found-link:hover {
+    text-decoration: underline;
+}
+
+.not-found-emoji {
+    font-size: 5rem;
+}
