@@ -2,7 +2,9 @@ import React from 'react';
 import './Header.css';
 import Keyboard from '../../assets/Keyboard.jpeg'
 import logo from '../../assets/SecondaryLogo.png'
+import { useNavigate } from 'react-router-dom';
 const Hero = () =>{
+  const navigate =useNavigate();
   return (<div>
      <div id="Home" className='Maincontent'>
         <div className='WelcomeMsg'>
@@ -19,7 +21,9 @@ const Hero = () =>{
         <img src={logo} loading='lazy' alt="Logo" />
       </div>
       <div className='Cta'>
-        <button className='start'>
+        <button className='start'onClick={() => navigate('/login')}>
+          
+
             <a href="/login">Get Started</a>
         </button>
         <button className='learn'>
