@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../../config/configure';
+import './Quiz.css'; // Ensure this file contains the necessary styles
 
 const Quiz = () => {
   const { quizCode } = useParams();
@@ -118,11 +119,19 @@ const Quiz = () => {
   };
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="error-container">
+        <div className="error-icon">🚫</div>
+        <h1 className="error-heading">Error</h1>
+        <p className="error-text">Oops! The quiz code you entered is incorrect or does not exist.</p>
+        <p className="error-message">Please check the code and try again.</p>
+        <button className="error-link" onClick={handleCancel}>Go Back to Dashboard</button>
+      </div>
+    );
   }
 
   if (!quizData) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   const currentQuestion = quizData.questions[currentQuestionIndex];
