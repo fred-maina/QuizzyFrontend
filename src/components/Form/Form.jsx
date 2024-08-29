@@ -25,7 +25,7 @@ const Form = () => {
 
         e.preventDefault();
         const url = `${BASE_URL}/authenticate/auth/token/`;
-            console.log('Request URL:', url);
+            
         try {
             const response = await axios.post(`${BASE_URL}/authenticate/auth/token/`, {
                 username,
@@ -49,14 +49,14 @@ const Form = () => {
 
             const url = `${BASE_URL}/authenticate/auth/token/`;
             console.log('Request URL:', url);
-            // First, register the user
+            
             await axios.post(`${BASE_URL}/authenticate/register/`, {
                 email,
                 password,
                 first_name: firstName,
                 last_name: lastName,
             });
-            
+            let username= email;
             // Then, log the user in automatically
             const response = await axios.post(`${BASE_URL}/authenticate/auth/token/`, {
                 username,
@@ -87,10 +87,10 @@ const Form = () => {
                             <h1>Welcome Back</h1>
                             <p>Please enter your account details</p>
                             <form onSubmit={handleLogin}>
-                                <label>Username</label>
+                                <label>Email/Username</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter Username"
+                                    placeholder="Enter Email/Username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     required
