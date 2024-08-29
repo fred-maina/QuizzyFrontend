@@ -136,7 +136,7 @@ const CreateQuiz = () => {
           <h2>Quiz Created Successfully</h2>
           <p>Your quiz has been successfully created!</p>
           <p>Quiz Code: <strong>{quizCode}</strong></p>
-          <p>Quiz Link: <a href={`/quiz/${quizCode}`}>/quiz/{quizCode}</a></p>
+          <p>Quiz Link: <a href={`${BASE_URL}/quiz/${quizCode}`}>{BASE_URL.replace(/^https?:\/\//, '')}/quiz/{quizCode}</a></p>
           <div className="btn-group">
             <button
               onClick={() => navigator.clipboard.writeText(quizCode)}
