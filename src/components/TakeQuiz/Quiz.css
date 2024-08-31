@@ -17,6 +17,9 @@
     color: var(--danger-color); /* Danger color for the error heading */
     margin: 0;
 }
+.intro-card, .quiz-card{
+    background-color: inherit;
+}
 
 .error-text {
     font-size: 1.5rem;
