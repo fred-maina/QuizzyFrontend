@@ -9,7 +9,7 @@ const Results = () => {
 
   useEffect(() => {
     if (score === undefined || !quizCode || !totalQuestions) {
-      navigate('/');
+      navigate('/dashboard');
       return;
     }
 
@@ -62,7 +62,7 @@ const Results = () => {
       <p>Quiz Code: {quizCode}</p>
       <p>Your Score: {score} / {totalQuestions}</p>
       <p>Score Percentage: {scorePercentage}%</p>
-      <button onClick={() => navigate('/')}>Return Home</button>
+      <button onClick={() => navigate('/dashboard')}>Return Home</button>
     </div>
   );
 };
