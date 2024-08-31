@@ -141,7 +141,7 @@ const Analytics = () => {
         <p>Total People <br /> reached</p>
       </div>
       <div className='Questions AnalyticsItem'>
-        <h1>300</h1>
+        <h1>0</h1>
         <p>Questions <br /> Answered</p>
       </div>
     </div>
